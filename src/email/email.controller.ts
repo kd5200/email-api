@@ -2,11 +2,12 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { MailerService } from './mailer.service';
 
+// where our email API handles requests
 @Controller('email')
 export class EmailController {
   constructor(private readonly mailerService: MailerService) {}
 
-  @Post('send')
+  @Post('/send')
   async sendEmail(@Body() body: any) {
     const { to, subject, text } = body;
 

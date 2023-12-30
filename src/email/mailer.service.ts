@@ -2,6 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 
+// Injectable indicates that we can use this class with the decorator within other files.
 @Injectable()
 export class MailerService {
   async sendEmail({
